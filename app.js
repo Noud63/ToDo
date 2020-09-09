@@ -6,8 +6,8 @@ const clear = document.getElementById('clr');
 const submit = document.getElementById('btn');
 
 //Classes
-const checked = "fa-check-circle";    //check button
-const unchecked = "fa-circle-thin";   // uncheck button
+const checked = "fa-check-circle";    //check button class
+const unchecked = "fa-circle-thin";   //uncheck button class
 const line_through = "lineThrough";
 
 //Variables
@@ -20,7 +20,7 @@ let data = localStorage.getItem('TODO');
 // check if data in localStorage
 if(data){
     listItems = JSON.parse(data);
-      id = listItems.length             // set the id to last in list
+      id = listItems.length             //Set the id to last in list, id = 9 then listlength = 10, so next item has id 10
       loadList(listItems)
 }else{
     // if localStorage is empty so no data
@@ -42,10 +42,10 @@ localStorage.setItem('TODO', JSON.stringify(listItems))
 
 function addToDo(toDo, id, done, trash){
 
-   if(trash){ return;}   //if item is in the trash, prevents the code to run
+   if(trash){ return;}                            //if item is in the trash, prevents the code to run
 
    const completed = done ? checked : unchecked;  // check if todo is comleted we use check class or uncheck class
-   const crossOut = done ? line_through : "";  // if check = completed => add class line-through
+   const crossOut = done ? line_through : "";     // if check = completed => add class line-through
 
 //fa-circle-thin is changed by ${DONE} DONE = CHECK : UNCHECK = fa-check-circle or fa-circle-thin
 
